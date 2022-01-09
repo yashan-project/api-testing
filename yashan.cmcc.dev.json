@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "c2c9dfeb-2006-4b01-8013-79e64433f1e7",
+		"name": "yashan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "下单接口",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"app_id\": \"{{app_id}}\",\n    \"mobile\": \"{{mobile}}\",\n    \"reciver_man\": \"13426256091\",\n    \"reciver_address\": \"xx\",\n    \"delivery_method\": \"xx\",\n    \"goods\": [\n        {\n            \"goods_no\": \"SDCMCC05\",\n            \"goods_name\": \"搜电移动用户专属5元立减券\",\n            \"goods_brand\": \"搜电\",\n            \"goods_category\": \"\",\n            \"tax_rate\": \"0.06\",\n            \"goods_num\": 1,\n            \"unit_price\": \"7\"\n        }\n    ],\n    \"hmac\": \"349c59688bbeb3a5ba7389d9f07ba596\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/cmcc/place_order",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cmcc",
+						"place_order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户移动积分余额查询接口",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"app_id\": \"{{app_id}}\",\n    \"mobile\": \"{{mobile}}\",\n    \"callback_url\": \"{{callback_url}}\",\n    \"hmac\": \"85d41e589e90806d5f8913a389cc2bc6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/cmcc/query_points",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cmcc",
+						"query_points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "支付接口",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"app_id\": \"{{app_id}}\",\n    \"mobile\": \"{{mobile}}\",\n    \"sms_code\": \"123456\",\n    \"hmac\": \"2b551c32412b61f1fd195ad1bfd72f35\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/cmcc/detect_order/{{trade_order_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cmcc",
+						"detect_order",
+						"{{trade_order_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "移动积分扣减短信接口",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"app_id\": \"{{app_id}}\",\n    \"mobile\": \"{{mobile}}\",\n    \"hmac\": \"94133b0647aa8b9f9fd4deea7ff0cec3\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/cmcc/send_sms/{{trade_order_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cmcc",
+						"send_sms",
+						"{{trade_order_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "退款接口",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"app_id\": \"{{app_id}}\",\n    \"mobile\": \"{{mobile}}\",\n    \"hmac\": \"cb97390edc034fa8a3d5c12f54964d9e\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/cmcc/cancel_order/{{trade_order_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cmcc",
+						"cancel_order",
+						"{{trade_order_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "订单查询接口",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"app_id\": \"{{app_id}}\",\n    \"hmac\": \"b50c8889a7ec5f874d2469a3afbd4a94\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/cmcc/query_order/{{trade_order_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cmcc",
+						"query_order",
+						"{{trade_order_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "发送支付短信",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"app_id\": \"{{app_id}}\",\n    \"mobile\": \"{{mobile}}\",\n    \"sms_code\": \"123456\",\n    \"hmac\": \"1f69c76a317352eb5259b90be8c94cb0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/cmcc/send_sms/21061818050258001260",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cmcc",
+						"send_sms",
+						"21061818050258001260"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "trade_order_id",
+			"value": "21061818050258001260"
+		}
+	]
+}
